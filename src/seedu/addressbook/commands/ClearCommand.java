@@ -18,7 +18,7 @@ public class ClearCommand extends Command {
      * @return True if changes are made, false otherwise
      */
     public boolean isMutating() {
-        return false;
+        return true;
     }
 
     @Override
