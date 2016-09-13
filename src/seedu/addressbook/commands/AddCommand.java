@@ -52,6 +52,14 @@ public class AddCommand extends Command {
     public AddCommand(Person toAdd) {
         this.toAdd = toAdd;
     }
+    
+    /**
+     * Queries if this command makes any write changes to the the address book
+     * @return True if changes are made, false otherwise
+     */
+    public boolean isMutating() {
+        return true;
+    }
 
     public ReadOnlyPerson getPerson() {
         return toAdd;

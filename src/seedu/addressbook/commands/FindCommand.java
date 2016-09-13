@@ -23,6 +23,15 @@ public class FindCommand extends Command {
         this.keywords = keywords;
     }
 
+
+    /**
+     * Queries if this command makes any write changes to the the address book
+     * @return True if changes are made, false otherwise
+     */
+    public boolean isMutating() {
+        return false;
+    }
+    
     /**
      * Returns copy of keywords in this command.
      */
