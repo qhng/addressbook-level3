@@ -36,17 +36,35 @@ public class Logic {
         setAddressBook(addressBook);
     }
 
-    void setStorage(Storage storage, int index) {
-        if (index >= this.storages.size()) return;
+    /**
+     * Replaces the storage to be used at the specified index
+     * @param storage the storage to be replaced with
+     * @param index the index where storage will replace
+     */
+    boolean setStorage(Storage storage, int index) {
+        if (index >= this.storages.size()) {
+            return false;
+        }
         this.storages.set(index, storage);
+        return true;
     }
-    
+
+    /**
+     * Adds to the list of storages that will be used/
+     * @param storage the storage to be added
+     */
     void addStorage(Storage storage){
         this.storages.add(storage);
     }
     
+    /**
+     * Removes from the list of storages that will be used.
+     * @param storage the storage to be removed
+     */
     void removeStorage(Storage storage) {
-        this.storages.remove(storage);
+        if (this.storages.contains(storage)) {
+            this.storages.remove(storage);
+        }
     }
 
     void setAddressBook(AddressBook addressBook){
